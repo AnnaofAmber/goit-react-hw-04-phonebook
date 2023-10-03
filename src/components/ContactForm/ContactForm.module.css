@@ -1,0 +1,54 @@
+.contactForm {
+    padding: 120px 15px 20px 15px;
+    margin-left: -300px;
+    margin-right: 300px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+    max-width: 250px;
+  }
+  
+  .label {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .input {
+    width: 236px;
+    height: 18px;
+    padding: 5px;
+    outline: 2px solid teal;
+    outline-offset: 2px;
+    border: none;
+    border-radius: 8px;
+  }
+  .input:focus {
+    outline: 2px solid rgba(199, 85, 43, 0.607);
+  }
+  
+  .btnAdd {
+    display: block;
+    width: 100px;
+    height: 35px;
+    margin-left: 150px;
+    background-color: rgba(13, 182, 182, 0.418);
+    border: 0.5px solid teal;
+    border-radius: 8px;
+    color: rgba(0, 0, 0, 0.678);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .btnAdd:hover {
+    box-shadow: 5px 5px 12px -12px rgba(0, 0, 0, 0.75);
+    background-color: rgba(9, 112, 112, 0.752);
+    border: 0.5px solid teal;
+    color: rgb(255, 255, 255);
+  }
+  .btnAdd:focus {
+    box-shadow: 5px 5px 12px -12px rgba(0, 0, 0, 0.75);
+    background-color: rgba(9, 112, 112, 0.752);
+    border: 0.5px solid teal;
+    color: rgb(255, 255, 255);
+  }

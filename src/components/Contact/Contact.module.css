@@ -1,0 +1,39 @@
+
+
+.item {
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  border-bottom: 2px solid rgba(0, 128, 128, 0.4);
+}
+.btnDelete {
+  display: block;
+  width: 100px;
+  height: 35px;
+
+  background-color: rgba(199, 85, 43, 0.607);
+  border: 0.5px solid rgb(128, 60, 0);
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnDelete:hover {
+  box-shadow: 5px 5px 12px -12px rgba(0, 0, 0, 0.907);
+  background-color: rgba(199, 85, 43, 0.291);
+  border: 0.5px solid rgb(128, 60, 0);
+  color: rgba(60, 40, 8, 0.86);
+}
+
+.btnDelete:focus {
+  box-shadow: 5px 5px 12px -12px rgba(0, 0, 0, 0.907);
+  background-color: rgba(199, 85, 43, 0.291);
+  border: 0.5px solid rgb(128, 60, 0);
+  color: rgba(60, 40, 8, 0.86);
+}
