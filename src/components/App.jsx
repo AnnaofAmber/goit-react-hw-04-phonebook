@@ -29,7 +29,7 @@ export const App = () => {
   const onSubmit = data => {
     setContacts(prevState => {
       data.id = nanoid();
-      return { contacts: [...prevState.contacts, data] };
+      return [...prevState, data] ;
     });
   };
 
@@ -40,9 +40,6 @@ export const App = () => {
     return contacts.some(({ number }) => number === contact);
   };
 
-  // const onChange = e => {
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
 
   const onFilter = () => {
     return contacts.filter(
