@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { nanoid } from 'nanoid';
 import css from './App.module.css';
@@ -9,21 +9,18 @@ import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 
 export const App = () => {
-  // state = {
-  //   contacts: [
-  // { id: nanoid(), name: 'Rosie Simpson', number: '459-12-56' },
-  // { id: nanoid(), name: 'Hermione Kline', number: '443-89-12' },
-  // { id: nanoid(), name: 'Eden Clements', number: '645-17-79' },
-  // { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
-  //   ],
-  //   filter: '',
-  // };
-  const [contacts, setContacts] = useState([
+
+  const [contacts, setContacts] = useState(()=>{
+    const parsedContacts = JSON.parse(localStorage.getItem('contacts'))
+      if(parsedContacts){
+        return parsedContacts
+      } else
+    return[
     { id: nanoid(), name: 'Rosie Simpson', number: '459-12-56' },
     { id: nanoid(), name: 'Hermione Kline', number: '443-89-12' },
     { id: nanoid(), name: 'Eden Clements', number: '645-17-79' },
     { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
-  ]);
+  ]});
   const [filter, setFilter] = useState('');
   
   const onSubmit = data => {
@@ -40,7 +37,6 @@ export const App = () => {
     return contacts.some(({ number }) => number === contact);
   };
 
-
   const onFilter = () => {
     return contacts.filter(
       contact =>
@@ -49,27 +45,16 @@ export const App = () => {
   };
 
   const onDelete = contactId => {
-    this.setState(prevState => {
-      return {
-        contacts: prevState.contacts.filter(
+    setContacts(prevState => {
+      return prevState.filter(
           contact => contact.id !== contactId
-        ),
-      };
+        )
     });
   };
 
-  // componentDidMount(){
-  //   const parsedContacts = JSON.parse(localStorage.getItem('contacts'))
-  //   if(parsedContacts){
-  //     this.setState({contacts:parsedContacts})
-  //   }
-  // }
-
-  // componentDidUpdate(prevProps, prevState){
-  //   if(this.state.contacts !== prevState.contacts){
-  //     localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
-  //   }
-  // }
+useEffect(()=>{
+ localStorage.setItem('contacts', JSON.stringify(contacts))
+}, [contacts])
 
   return (
     <div className={css.main}>
