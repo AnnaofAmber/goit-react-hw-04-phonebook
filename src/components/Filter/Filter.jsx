@@ -12,7 +12,7 @@ export const Filter = ({ filter, onChange }) => {
         name="filter"
         value={filter}
         type="text"
-        onChange={onChange}
+        onChange={e => onChange(e.target.value)}
       />
     </div>
 

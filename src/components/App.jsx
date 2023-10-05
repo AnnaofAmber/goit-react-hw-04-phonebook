@@ -25,6 +25,7 @@ export const App = () => {
     { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
   ]);
   const [filter, setFilter] = useState('');
+  
   const onSubmit = data => {
     setContacts(prevState => {
       data.id = nanoid();
