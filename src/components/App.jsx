@@ -33,9 +33,6 @@ export const App = () => {
   const nameAlreadyExists = contact => {
     return contacts.some(({ name }) => name === contact);
   };
-  const numberAlreadyExists = contact => {
-    return contacts.some(({ number }) => number === contact);
-  };
 
   const onFilter = () => {
     return contacts.filter(
@@ -62,7 +59,6 @@ useEffect(()=>{
       <ContactForm
         onSubmit={onSubmit}
         nameAlreadyExists={nameAlreadyExists}
-        numberAlreadyExists={numberAlreadyExists}
       />
 
       <Contacts title="Contacts">
