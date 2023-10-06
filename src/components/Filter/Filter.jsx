@@ -15,6 +15,5 @@ export const Filter = ({ filter, onChange }) => {
         onChange={e => onChange(e.target.value)}
       />
     </div>
-
   );
 };
